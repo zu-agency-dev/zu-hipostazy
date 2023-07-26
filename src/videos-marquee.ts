@@ -1,10 +1,10 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
-
 // MARQUEE POWER-UP
-window.addEventListener('DOMContentLoaded', () => {
+window.Webflow ||= [];
+window.Webflow.push(() => {
+  gsap.registerPlugin(ScrollTrigger);
   // attribute value checker
   function attr(defaultVal: any, attrVal: any) {
     const defaultValType = typeof defaultVal;
