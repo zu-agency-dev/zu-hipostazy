@@ -2,7 +2,8 @@ import hoverEffect from 'hover-effect';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  const block = '.blog-post-link_block';
+  // const block = '.blog-post-link_block';
+  const block = '.blog_content-wrapper';
   $(block).each(function () {
     $(this).on('mouseover', () => {
       $(this).find('.blog-slide-bg').addClass('is-active');
@@ -34,11 +35,8 @@ window.Webflow.push(() => {
   });
 
   $(block).each((post) => {
-    // $(block)[post].on('mouseover', function () {
-    //   $('.block-visuals'[post]).trigger('mouseover');
-    // });
     new hoverEffect({
-      parent: $('.blog-visuals')[post],
+      parent: $('.blog_content-wrapper')[post],
       intensity: 0.3,
       imagesRatio: 9 / 16,
       image1: $('.blog-visual-image')[post].getAttribute('src'),

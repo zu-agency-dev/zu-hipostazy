@@ -1,6 +1,7 @@
 {
   "extends": "@finsweet/tsconfig",
   "compilerOptions": {
+    "target": "ES6",
     "rootDir": ".",
     "baseUrl": "./",
     "paths": {
