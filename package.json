@@ -54,7 +54,6 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.39.2",
     "@types/jquery": "^3.5.16",
-    "@types/swiper": "^6.0.0",
     "gsap": "^3.12.2",
     "hover-effect": "^1.2.1",
     "jquery": "^3.7.0",
