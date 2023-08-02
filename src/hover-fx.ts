@@ -19,26 +19,28 @@ window.Webflow.push(() => {
   });
 
   $(block).on('mouseover', function () {
-    if (Number($(this).find('.blog-title').width()) > Number($('.blog-content').width())) {
+    if (
+      Number($(this).find('.blog-title').first().width()) > Number($('.blog-content-item').width())
+    ) {
+      $('.blog-item_marquee-panel.is-active').find('.blog-title').removeClass('hide');
       $('.blog-item_marquee-panel.is-active').css({
-        animation: 'marquee 40s infinite',
+        animation: 'marquee 90s linear infinite',
       });
     }
   });
   $(block).on('mouseout', function () {
-    if (Number($(this).find('.blog-title').width()) > Number($('.blog-content').width())) {
-      $('.blog-item_marquee-panel').css('-webkit-animation', 'none');
-      $('.blog-item_marquee-panel').css('-moz-animation', 'none');
-      $('.blog-item_marquee-panel').css('-ms-animation', 'none');
-      $('.blog-item_marquee-panel').css('animation', 'none');
-    }
+    $('.blog-item_marquee-panel').css('-webkit-animation', 'none');
+    $('.blog-item_marquee-panel').css('-moz-animation', 'none');
+    $('.blog-item_marquee-panel').css('-ms-animation', 'none');
+    $('.blog-item_marquee-panel').css('animation', 'none');
   });
 
   $(block).each((post) => {
+    $('canvas').css({ width: '34%' });
     new hoverEffect({
       parent: $('.blog_content-wrapper')[post],
       intensity: 0.3,
-      imagesRatio: 9 / 16,
+      imagesRatio: 3 / 16,
       image1: $('.blog-visual-image')[post].getAttribute('src'),
       image2: $('.blog-visual-image')[post].getAttribute('src'),
       displacementImage:
